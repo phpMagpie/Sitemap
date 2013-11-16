@@ -1,0 +1,15 @@
+{
+	"name": "Sitemap",
+	"description": "Simple sitemap",
+
+	"author": "Appsbender",
+	"authorEmail": "regz24@gmail.com",
+	"authorUrl": "http://appsbender.com",
+
+	"dependencies": {
+		"plugins": [
+			"acl",
+			"extensions"
+			]
+		}
+}
