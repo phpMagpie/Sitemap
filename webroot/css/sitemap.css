@@ -1,0 +1,17 @@
+/* 
+    Document   : Sitemap
+    Created on : Dec 3, 2013, 10:39:43 AM
+    Author     : Appbender <regz24@gmail.com>
+    Url        : http://www.appsbender.com
+    Description:
+        Initial style for for none xml sitemap request
+*/
+
+.sitemap{
+    list-style: none;
+    list-style-position: outside;
+}
+.sitemap a{
+    text-decoration: none;
+    padding: 0 .3em;
+}

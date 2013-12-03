@@ -1,5 +1,7 @@
 <?php
+
 App::uses('SitemapAppController', 'Sitemap.Controller');
+
 /**
  * Sitemap Controller
  *
@@ -20,9 +22,16 @@ class SitemapController extends SitemapAppController {
         $this->set('title_for_layout', __('Sitemap'));
         App::uses('Node', 'Nodes.Model');
         $this->Node = new Node();
-        $this->set('nodes', $this->Node->find('all', array('conditions' => array('Node.type !=' => 'attachment', 'Node.status' => '1'))));
-        $this->layout = 'xml/default';
-        $this->response->type('xml');
+        $this->Node->recursive = -1;
+        $nodes = $this->Node->find('all', array('conditions' => array('Node.type !=' => 'attachment', 'Node.status' => '1')));
+        $type = 'default';
+        $path = pathinfo($this->request->url);
+        if (!empty($path['extension']) && $path['extension'] == 'xml') {
+            $this->layout = 'xml/default';
+            $type = $path['extension'];
+            $this->response->type('xml');
+        }
+        $this->set(compact('type', 'nodes'));
     }
 
 }
