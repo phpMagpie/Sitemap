@@ -30,6 +30,7 @@ class SitemapActivation {
 	public function onActivation(&$controller) {
 		// ACL: set ACOs with permissions
 		$controller->Croogo->addAco('Sitemap'); // SitemapController
+		$controller->Croogo->addAco('Sitemap/Sitemap/index', array('public'));
 	}
 
 /**
